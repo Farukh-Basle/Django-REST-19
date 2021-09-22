@@ -1,0 +1,69 @@
+Creating the data into DB :-
+=====  =========  =======
+1 )  Sending the data from partner application to Django application , 
+     then that data is stored in "request" object.
+
+2 ) We need to get the provided data from "request" object by using the "body" attribute.
+
+3 ) store that data in to one variable like  data = request.body
+
+4 ) check the provided data is really Json data or Not.
+
+5 ) If not  Json type data then return  Exception msg.
+
+6 ) If yes then  convert this json data into python dict types by using loads()
+
+7 ) Create one "Form" class related to "Model" class fields.
+
+8 ) Send this Dict type data into Form class and create a Form class object.
+
+9)  Check form object is valid or not by using    "is_valid()"
+
+10 ) If  form object valid  then  by using  save()  we can save data. 
+
+11 ) If form object is not valid then return Exception message.
+
+
+
+
+
+Updating the data into DB :-
+=====  =========  =======
+1)  Sending the data from partner application to Django application  , then that data is stored in "request" object.
+
+2 ) We need to get the provided data from "request" object by using the "body" attribute.
+
+3 ) store that data in to one variable like  data = request.body
+
+4 ) check the provided data is really Json data or Not.
+
+5 ) If not  Json type data then return  Exception msg.
+
+6 ) If yes then  convert it into python dict types using loads() and store in one variable like "provided_data"
+
+
+Note :  
+=====
+7 )  Get the existing data from database  by using  given  ID number  (model query ).
+8 )  If not avialable then returns the one Exception msg .
+9 )  If record available then store into one variable.
+
+ 10 ) convert db data into dict type data and store into one variavble like "original_data"
+
+
+11) using update() , merge both data. and store in one variable like  "original_data"
+
+
+
+
+12) Create one "Form" class related to "Model" class fields.
+
+13 ) Send this "original_data" Dict type data into Form class and create a Form class      object  with  instance=emp .
+
+14)  Check form object is valid or not by using    "is_valid()"
+
+15 ) If  form object valid  then  using  save()  we can save. 
+
+16 ) If form object is not valid then return Exception message.
+
+
